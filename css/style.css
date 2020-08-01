@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(245, 245, 245) !important;
+}
+
+#container {
+    max-width: 640px !important;
+    margin: auto;
+}
+
+p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#nav-btn i{
+    padding-right: 10px;
+}
+
+header {
+    margin: 50px 0 40px 0;
+}
+
+header h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+header a{
+    text-decoration: none !important;
+}
+
+.sub-title {
+    font-size: 24px;
+}
+
+#nav-btn{
+    text-align: left;
+    margin: 0 15px;
+}
+
+#file-list{
+    margin: 20px 0;
+    text-align: left;
+}
+

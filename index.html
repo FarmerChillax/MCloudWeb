@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue/vue.min.js"></script>
+    <!-- <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./font/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <header></header>
+        <div id="content" class="text-center">
+            <div id="nav" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+
+            </div>
+            <div id="nav-btn">
+                <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="right"
+                    title="Tooltip on right">
+                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                    上传文件
+                </button>
+                <!-- <span class="alert alert-info" style="margin:auto" role="alert">
+                    A simple info alert—check it out!
+                </span> -->
+            </div>
+            <div id="file-list" class="list-group">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">File Name</th>
+                            <th scope="col">File Date</th>
+                            <th scope="col">Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="dir in dirs">
+                            <td scope="row">
+                                <i class="fa fa-folder-open-o " aria-hidden="true"></i>
+                                <a @click="test" href="#" class="dirs">
+                                    {{ dir.name }}
+                                </a>
+                            </td>
+                            <td>{{ dir.date }}</td>
+                            <td>{{ dir.size }}</td>
+                        </tr>
+                        <tr v-for="file in files">
+                            <td scope="row">
+                                <i class="fa fa-file-o" aria-hidden="true"></i>
+                                <a href="{{ file.name }}">
+                                    {{ file.name }}
+                                </a>
+                            </td>
+                            <td>{{ file.date }}</td>
+                            <td>{{ file.size }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="http://127.0.0.1:5000/download/?filePath=/233/321&fileName=ip_server.py">2020.doc 233</a>
+        <script>
+            $(
+                $('header').load('./html/header.html'),
+            );
+            console.log(window.location.pathname);
+        </script>
+    </div>
+    <!-- my js -->
+    <script src="./js/index.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>
