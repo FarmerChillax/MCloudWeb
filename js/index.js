@@ -3,6 +3,7 @@ var files = [], dirs = [];
 var fileList = new Vue({
     el: '#file-list',
     data: {
+        url: "http://www.farmer233.xyz:5000/",
         files: files,
         dirs: dirs
     },
@@ -14,6 +15,7 @@ var fileList = new Vue({
 })
 
 var format_time = function (TIME) {
+    
     let my_time = new Date(TIME * 1000);
     let china_date_num = {
         0: "星期日",
@@ -31,7 +33,7 @@ var format_time = function (TIME) {
     return my_time.toLocaleDateString().split('/').join("-") + " " + target_time[0];
 }
 
-$.get("http://127.0.0.1:5000/", function (data) {
+$.get("http://192.168.2.200:5000/", function (data) {
     console.log(data["fileList"]["files"]);
     fileList.dirs = data["fileList"]["dirs"];
     fileList.files = data["fileList"]["files"];

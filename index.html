@@ -54,7 +54,7 @@
                         <tr v-for="dir in dirs">
                             <td scope="row">
                                 <i class="fa fa-folder-open-o " aria-hidden="true"></i>
-                                <a @click="test" href="#" class="dirs">
+                                <a @click="test" v-bind:href="url + dir.name" class="dirs">
                                     {{ dir.name }}
                                 </a>
                             </td>
@@ -64,7 +64,7 @@
                         <tr v-for="file in files">
                             <td scope="row">
                                 <i class="fa fa-file-o" aria-hidden="true"></i>
-                                <a href="{{ file.name }}">
+                                <a v-bind:href="url + file.name">
                                     {{ file.name }}
                                 </a>
                             </td>
@@ -75,7 +75,7 @@
                 </table>
             </div>
         </div>
-        <a href="http://127.0.0.1:5000/download/?filePath=/233/321&fileName=ip_server.py">2020.doc 233</a>
+        <!-- <a href="http://127.0.0.1:5000/download/?filePath=/233/321&fileName=ip_server.py">2020.doc 233</a> -->
         <script>
             $(
                 $('header').load('./html/header.html'),
@@ -86,7 +86,7 @@
     <!-- my js -->
     <script src="./js/index.js"></script>
     <script>
-        
+
     </script>
 </body>
 
